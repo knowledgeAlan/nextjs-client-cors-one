@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/lib/utils/api.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1715667606593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1715667606593,
+            "name": "Commit-0",
+            "content": "import axios from 'axios';\nimport config from '../../config/index';\n\nconst instance = axios.create({\n  baseURL: config.API_HOST,\n  timeout: 40000,\n  headers: {\n    Accept: 'application/json, text/plain, */*',\n    'Content-Type': 'application/json; charset=utf-8'\n  }\n});\n\nexport const fetcher = (url) => {\n  return instance.get(url).then((res) => {\n    if (!res.data) {\n      throw Error(res.data.message);\n    }\n\n    return res.data;\n  });\n};\n\nexport default instance;"
+        }
+    ]
+}

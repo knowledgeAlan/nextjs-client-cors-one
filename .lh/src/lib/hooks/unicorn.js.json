@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/lib/hooks/unicorn.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1715667705995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1715667705995,
+            "name": "Commit-0",
+            "content": "import useSWR from 'swr';\nimport { fetcher } from '../utils/api';\n\nexport const useUnicorns = () => {\n  const pathKey = `/unicorns`;\n  const { data, error } = useSWR(pathKey, fetcher, {\n    refreshInterval: 10000\n  });\n\n  return { data: data || [], loading: !error && !data };\n};"
+        }
+    ]
+}

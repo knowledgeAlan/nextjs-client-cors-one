@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    basePath: '/test',
+    // basePath: '/test',
 
     async rewrites() {
         return [
           {
-            source: '/api/:path*',
-            destination: 'https://domain.com/api/:path*', 
+            source: '/manage-rest/:path*',
+            destination: 'https://merchant-stage.uniwebpay.com/manage-rest/:path*', 
             basePath: false,// 这里的 example.com 是 API 的域名
           },
         ];

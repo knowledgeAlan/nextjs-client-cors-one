@@ -2,29 +2,19 @@
 import exp from "constants";
 import Image from "next/image";
 
- 
-
-import axios from 'axios';
-
+import { useUnicorns } from "../lib/hooks/unicorn";
 
 export default function Home() {
 
- 
+  const { data } = useUnicorns();
 
-  const test = async()=>{
-    const {data} = await axios.post('/api/xxx', {
-      user:'2323243'
-    }, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+  const test = ()=>{
+
     console.log("Testing=========",data);
   }
 
   function handleClick() {
     console.log("increment like count")
-    test();
   }
   return (
     <main className="bg-white-100">
