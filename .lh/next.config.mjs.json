@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1715667939745,
@@ -44,6 +44,10 @@
                 {
                     "date": 1715670514792,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n /** @type {import('next').NextConfig} */\n const nextConfig = {\n     output: 'export',\n-    // basePath: '/test',\n+    basePath: '/test',\n \n     async rewrites() {\n         return [\n           {\n-            source: '/manage-rest/:path*',\n-            destination: 'https://merchant-stage.uniwebpay.com/manage-rest/:path*', \n+            source: '/api/:path*',\n+            destination: 'https://domain.com/api/:path*', \n             basePath: false,// 这里的 example.com 是 API 的域名\n           },\n         ];\n       },\n"
+                },
+                {
+                    "date": 1715670624699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+/** @type {import('next').NextConfig} */\n+const nextConfig = {\n+    output: 'export',\n+    basePath: '/test',\n+\n+    async rewrites() {\n+        return [\n+          {\n+            source: '/api/:path*',\n+            destination: 'https://domain.com/api/:path*', \n+            basePath: false,// 这里的 example.com 是 API 的域名\n+          },\n+        ];\n+      },\n+};\n+\n+export default nextConfig;\n"
                 }
             ],
             "date": 1715667939745,
